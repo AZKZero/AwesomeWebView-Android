@@ -1084,6 +1084,7 @@ public class AwesomeWebViewActivity extends AppCompatActivity
         layoutViews();
         initializeViews();
         load();
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
     }
 
     @Override
