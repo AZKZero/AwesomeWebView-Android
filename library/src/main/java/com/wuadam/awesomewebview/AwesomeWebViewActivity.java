@@ -612,7 +612,7 @@ public class AwesomeWebViewActivity extends AppCompatActivity
             CoordinatorLayout.LayoutParams params =
                     new CoordinatorLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                             ViewGroup.LayoutParams.MATCH_PARENT);
-            params.setMargins(0, (int) toolbarHeight, 0, 0);
+            params.setMargins(0, (int) toolbarHeight, 0, 70);
             webLayout.setLayoutParams(params);
         }
     }
