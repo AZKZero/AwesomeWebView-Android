@@ -78,5 +78,6 @@
         android:layout_height="70sp"
         android:scaleType="fitXY"
         android:src="@drawable/ad2"
+        android:visibility="gone"
         android:layout_gravity="bottom"></ImageView>
 </android.support.design.widget.CoordinatorLayout>

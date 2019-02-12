@@ -1092,6 +1092,7 @@ public class AwesomeWebViewActivity extends AppCompatActivity
         setContentView(R.layout.awesome_web_view);
         ImageView imvad = findViewById(R.id.adSpace2);
         if (adImageLink != null) {
+            imvad.setVisibility(View.VISIBLE);
             Picasso.get().load(adImageLink).into(imvad);
             if (!adLink.equals("None")) {
                 imvad.setOnClickListener(new View.OnClickListener() {
