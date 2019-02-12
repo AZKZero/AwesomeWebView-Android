@@ -612,7 +612,9 @@ public class AwesomeWebViewActivity extends AppCompatActivity
             CoordinatorLayout.LayoutParams params =
                     new CoordinatorLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                             ViewGroup.LayoutParams.MATCH_PARENT);
-            params.setMargins(0, (int) toolbarHeight, 0, 70);
+            if (adLink != null)
+                params.setMargins(0, (int) toolbarHeight, 0, 70);
+            else params.setMargins(0, (int) toolbarHeight, 0, 0);
             webLayout.setLayoutParams(params);
         }
     }
@@ -1089,16 +1091,18 @@ public class AwesomeWebViewActivity extends AppCompatActivity
 
         setContentView(R.layout.awesome_web_view);
         ImageView imvad = findViewById(R.id.adSpace2);
-        Picasso.get().load(adImageLink).into(imvad);
-        if (!adLink.equals("None")) {
-            imvad.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    url = adLink;
-                    updateTitleFromHtml = true;
-                    load();
-                }
-            });
+        if (adImageLink != null) {
+            Picasso.get().load(adImageLink).into(imvad);
+            if (!adLink.equals("None")) {
+                imvad.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        url = adLink;
+                        updateTitleFromHtml = true;
+                        load();
+                    }
+                });
+            }
         }
         bindViews();
         layoutViews();
