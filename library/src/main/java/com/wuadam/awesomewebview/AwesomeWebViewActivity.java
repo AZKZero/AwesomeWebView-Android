@@ -5,6 +5,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
@@ -49,6 +50,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
@@ -224,6 +226,8 @@ public class AwesomeWebViewActivity extends AppCompatActivity
 
     protected String injectJavaScript;
     protected Boolean injectJavaScriptMainPage;
+
+    String adLink, adImageLink;
 
     protected String mimeType;
     protected String encoding;
@@ -475,6 +479,9 @@ public class AwesomeWebViewActivity extends AppCompatActivity
         data = builder.data;
         url = builder.url;
         extraHeaders = builder.extraHeaders;
+
+        adImageLink = builder.adImageLinkString;
+        adLink = builder.adLinkString;
     }
 
     protected void bindViews() {
@@ -1080,11 +1087,23 @@ public class AwesomeWebViewActivity extends AppCompatActivity
         initializeOptions();
 
         setContentView(R.layout.awesome_web_view);
+        ImageView imvad = findViewById(R.id.adSpace2);
+        Picasso.get().load(adImageLink).into(imvad);
+        if (!adLink.equals("None")) {
+            imvad.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    url = adLink;
+                    updateTitleFromHtml = true;
+                    load();
+                }
+            });
+        }
         bindViews();
         layoutViews();
         initializeViews();
         load();
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
+//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
     }
 
     @Override

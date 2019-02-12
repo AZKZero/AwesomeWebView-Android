@@ -58,10 +58,10 @@
     <item name="android:windowFullscreen">true</item>
   </style>
     <style name="FinestWebViewTheme.Light" parent="Theme.AppCompat.Light.NoActionBar">
-    <item name="colorPrimary">@color/colorPrimary</item>
-    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-    <item name="colorAccent">@color/whitey</item>
-    <item name="android:textColorPrimary">@color/whitey</item>
+        <item name="colorPrimary">#082c43</item>
+        <item name="colorPrimaryDark">#061f30</item>
+        <item name="colorAccent">#ffffff</item>
+        <item name="android:textColorPrimary">#ffffff</item>
     <item name="android:textColorSecondary">@color/finestSilver</item>
     <item name="windowActionModeOverlay">true</item>
   </style>

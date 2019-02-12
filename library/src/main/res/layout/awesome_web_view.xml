@@ -10,7 +10,8 @@
         android:id="@+id/webLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/toolbarHeight" />
+        android:layout_marginTop="@dimen/toolbarHeight"
+        android:layout_marginBottom="70sp" />
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appBar"
@@ -71,4 +72,11 @@
 
     </RelativeLayout>
 
+    <ImageView
+        android:id="@+id/adSpace2"
+        android:layout_width="match_parent"
+        android:layout_height="70sp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ad2"
+        android:layout_gravity="bottom"></ImageView>
 </android.support.design.widget.CoordinatorLayout>

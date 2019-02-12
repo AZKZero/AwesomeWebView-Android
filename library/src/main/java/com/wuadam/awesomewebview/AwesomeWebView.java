@@ -174,6 +174,7 @@ public class AwesomeWebView {
         protected String url;
         protected Map<String,String> extraHeaders;
         protected Boolean extraHeadersMainPage;
+        String adImageLinkString, adLinkString;
 
         public Builder(@NonNull Activity activity) {
             this.context = activity;
@@ -428,6 +429,16 @@ public class AwesomeWebView {
 
         public Builder titleColorRes(@ColorRes int colorRes) {
             this.titleColor = Res.getColor(colorRes);
+            return this;
+        }
+
+        public Builder adImageLink(String adImageLink) {
+            this.adImageLinkString = adImageLink;
+            return this;
+        }
+
+        public Builder adLink(String adLink) {
+            this.adLinkString = adLink;
             return this;
         }
 
