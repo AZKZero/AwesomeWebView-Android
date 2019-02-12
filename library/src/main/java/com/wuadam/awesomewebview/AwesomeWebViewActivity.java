@@ -73,6 +73,7 @@ import com.thefinestartist.utils.etc.APILevel;
 import com.thefinestartist.utils.service.ClipboardManagerUtil;
 import com.thefinestartist.utils.ui.DisplayUtil;
 import com.thefinestartist.utils.ui.ViewUtil;
+import com.squareup.picasso.Picasso;
 
 import java.io.File;
 import java.io.IOException;
