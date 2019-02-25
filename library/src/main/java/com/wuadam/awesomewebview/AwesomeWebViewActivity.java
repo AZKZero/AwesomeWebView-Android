@@ -30,6 +30,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatImageButton;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
@@ -1519,6 +1520,13 @@ public class AwesomeWebViewActivity extends AppCompatActivity
 
         @Override
         public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
+            view.loadUrl("file:///android_asset/errorpages.html");
+        }
+
+        @Override
+        public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
+//                refresh.show();
+            Log.w("running", "loading");
             view.loadUrl("file:///android_asset/errorpages.html");
         }
 
