@@ -45,6 +45,8 @@ import android.webkit.GeolocationPermissions;
 import android.webkit.PermissionRequest;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
+import android.webkit.WebResourceError;
+import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -1513,6 +1515,11 @@ public class AwesomeWebViewActivity extends AppCompatActivity
                     webView.loadUrl(injectJavaScript);
                 }
             }
+        }
+
+        @Override
+        public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
+            view.loadUrl("file:///android_asset/errorpages.html");
         }
 
         @Override
